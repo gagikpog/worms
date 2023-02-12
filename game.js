@@ -17,7 +17,9 @@ export class Game {
         this.resize();
         window.addEventListener('resize', () => this.resize(), false);
 
-        for (let i = 0; i < 2500; i++) {
+        const count = Math.floor((canvas.width / Point.size) * (canvas.height / Point.size) * 0.5);
+
+        for (let i = 0; i < count; i++) {
             this.points.push(new Point({ canvasWidth: canvas.width, canvasHeight: canvas.height }));
         }
     }
